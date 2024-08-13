@@ -5,7 +5,14 @@ import streamlit as st
 import os
 import google.generativeai as genai
 
+headers = {
+    "authorization":st.secrets['GOOGLE_API_KEY'],
+    "content-type": "application/json",
+ }
+
+
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+
 
 
 # to load model and get response
